@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>D3 javascript</title>
+</head>
+<body>
+    <h3>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid unde perferendis nemo explicabo ut.  Expedita aliquam iure neque, eius cum aut.</h3>
+    <ul></ul>
+    <svg  width="300px" height="300px"></svg>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script>
+        fruits=["orange","apple","Grapes","Banana","blackbarry"];
+        d3.select("h3").style("font-size","50px");
+        d3.select("ul")
+        .selectAll('li')
+        .data(fruits)
+        .enter()
+        .append("li")
+        .text(fruits => fruits + " fruit");
+var number =[20,130,50,30,180];
+var barheight = 40;
+d3.select("svg")
+        .selectAll("rect")
+        .data(number)
+        .enter()
+        .append("rect")
+        .attr("width",d => d)
+        .attr("height",barheight-5)
+        .attr("transform",(d,i) => "translate(100," + i * barheight + ")")
+
+    </script>
+    
+</body>
+</html>
